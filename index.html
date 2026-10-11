@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Legal AI Costa Rica: plataforma de investigación jurídica asistida por inteligencia artificial.">
+  <title>Legal AI Costa Rica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">L<span>+</span></div>
+      <div>
+        <h2>Legal AI</h2>
+        <small>COSTA RICA</small>
+      </div>
+    </div>
+
+    <p class="menu-label">PLATAFORMA JURÍDICA</p>
+
+    <button class="nav active" data-page="chat">✦ Chat jurídico</button>
+    <button class="nav" data-page="library">▤ Mi biblioteca</button>
+    <button class="nav" data-page="sources">⌕ Fuentes jurídicas</button>
+
+    <div class="sidebar-footer">
+      <span class="status-dot"></span>
+      <div>
+        <strong>Versión MVP</strong>
+        <small id="connection-status">Backend sin conectar</small>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ASISTENTE DE INVESTIGACIÓN JURÍDICA</p>
+        <h1 id="page-title">Chat jurídico</h1>
+      </div>
+      <span class="version">Prototipo inicial</span>
+    </header>
+
+    <section id="page-chat" class="page">
+      <div class="warning">
+        <strong>Importante:</strong> esta versión todavía no consulta
+        SINALEVI ni Nexus PJ. Las respuestas dependerán de los documentos
+        que se incorporen y de las funciones realmente conectadas.
+      </div>
+
+      <div class="welcome">
+        <div class="scale">⚖</div>
+        <h2>¿Qué desea investigar hoy?</h2>
+        <p>Consulte sus documentos jurídicos en un espacio de trabajo centralizado.</p>
+      </div>
+
+      <div id="messages" class="messages">
+        <div class="message">
+          <div class="avatar">L</div>
+          <div class="bubble">
+            <strong>Legal AI Costa Rica</strong>
+            <p>Bienvenido. Primero conecte el backend y cargue documentos
+            en Mi biblioteca. Podrá buscar fragmentos relacionados con
+            sus preguntas cuando el backend esté disponible.</p>
+            <small>No se ha realizado una consulta a fuentes oficiales.</small>
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <textarea id="question"
+          placeholder="Escriba su pregunta jurídica..."
+          required></textarea>
+        <div class="composer-footer">
+          <span>Investigación documental · MVP</span>
+          <button class="primary" type="submit">Buscar ↗</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="page-library" class="page hidden">
+      <h2>Mi biblioteca jurídica</h2>
+      <p class="subtitle">Incorpore documentos para realizar búsquedas.</p>
+
+      <div class="upload-box">
+        <div class="upload-icon">↑</div>
+        <h3>Cargar documentos</h3>
+        <p>Formatos admitidos: PDF, DOCX y TXT.</p>
+
+        <input id="file-input" type="file" multiple
+          accept=".pdf,.docx,.txt">
+
+        <button id="upload-button" class="primary" disabled>
+          Subir e indexar
+        </button>
+
+        <p id="upload-status" class="status"></p>
+      </div>
+
+      <h3>Documentos indexados</h3>
+      <div id="documents-list" class="document-list">
+        <p class="subtitle">Conecte el backend para consultar la biblioteca.</p>
+      </div>
+    </section>
+
+    <section id="page-sources" class="page hidden">
+      <h2>Fuentes jurídicas</h2>
+      <p class="subtitle">Estado de las integraciones del sistema.</p>
+
+      <div class="source">
+        <div><strong>SINALEVI</strong>
+          <p>Legislación costarricense</p>
+        </div>
+        <span class="tag">Pendiente</span>
+      </div>
+
+      <div class="source">
+        <div><strong>Nexus PJ</strong>
+          <p>Jurisprudencia del Poder Judicial</p>
+        </div>
+        <span class="tag">Pendiente</span>
+      </div>
+
+      <div class="source">
+        <div><strong>Corte Interamericana de Derechos Humanos</strong>
+          <p>Sentencias y opiniones consultivas</p>
+        </div>
+        <span class="tag">Pendiente</span>
+      </div>
+
+      <div class="warning">
+        Estas fuentes no están conectadas todavía. No se mostrarán
+        resultados jurídicos inventados ni se afirmará que fueron consultadas.
+      </div>
+    </section>
+
+    <footer>
+      Legal AI Costa Rica · Herramienta en desarrollo ·
+      Los borradores jurídicos requieren revisión profesional.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
